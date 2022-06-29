@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Model
+class Model implements \Countable
 {
 
     public function __construct(\PDO $pdo)
@@ -31,7 +31,7 @@ class Model
      *
      * @return array resources
      */
-    public function all()
+    public function all():array
     {
         $stmt = $this->pdo->query("SELECT * FROM user");
 
@@ -87,5 +87,15 @@ class Model
     public function save(User $user): void
     {
         $this->pdo->query(sprintf('INSERT INTO user (username) VALUES ("%s")', $user->username));
+    }
+
+    public function lastId():int{
+
+        return $this->pdo->lastInsertId();
+    }
+
+    public function count():int{
+
+        return count( $this->all() ) ;
     }
 }

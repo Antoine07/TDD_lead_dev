@@ -1,0 +1,24 @@
+{
+    "name": "app/even",
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "" : "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Antoine07",
+            "email": "antoine.lucsko@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test" : "vendor/bin/phpunit"
+    }
+}

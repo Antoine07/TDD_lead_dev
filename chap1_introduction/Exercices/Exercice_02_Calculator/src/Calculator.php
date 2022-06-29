@@ -5,7 +5,7 @@ namespace App;
 class Calculator
 {
 
-    public function __construct(private $precision)
+    public function __construct(private string $precision)
     {
     }
 

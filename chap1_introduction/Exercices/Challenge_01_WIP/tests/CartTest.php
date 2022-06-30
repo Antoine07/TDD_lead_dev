@@ -63,7 +63,7 @@ class CartTest extends TestCase
 
         // $this->assertEquals($cart->total(), 6.);
         $this->mockStorage->expects($this->once())->method('reset');
-        $cart->reset();
+        $this->cart->reset();
         // $this->assertEquals($cart->total(), 0.);
     }
 
